@@ -32,18 +32,19 @@ export class LoginPageComponent {
     }
 
     const { email = '', password = '' } = this.loginForm.value;
+     this.router.navigateByUrl('/')
 
-    this.authService.login(email!, password!).subscribe((isAuthenticated) => {
-      if (isAuthenticated) {
-        this.router.navigateByUrl('/');
-        return;
-      }
+    // this.authService.login(email!, password!).subscribe((isAuthenticated) => {
+    //   if (isAuthenticated) {
+    //     this.router.navigateByUrl('/');
+    //     return;
+    //   }
 
-      this.hasError.set(true);
-      setTimeout(() => {
-        this.hasError.set(false);
-      }, 2000);
-    });
+    //   this.hasError.set(true);
+    //   setTimeout(() => {
+    //     this.hasError.set(false);
+    //   }, 2000);
+    // });
   }
 
   // Check Authentication
